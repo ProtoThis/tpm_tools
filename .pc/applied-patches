@@ -1,0 +1,4 @@
+01-opencryptoki-soname.patch
+03-fix-bool-error-parseStringWithValues.patch
+04-fix-FTBFS-clang.patch
+05-openssl1.1_fix_data_mgmt.patch

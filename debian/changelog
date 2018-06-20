@@ -1,0 +1,150 @@
+tpm-tools (1.3.9.1-0.2) unstable; urgency=medium
+
+  * Added parameters to tpm_takeownership to use environment variables
+
+ -- Ferry van Zeelst <info@ProtoThis.com>  Wed, 20 Jun 2018 10:00:08 +0200
+
+tpm-tools (1.3.9.1-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream release
+    - Fix segfault in tpm_sealdata (Closes: #854708)
+  * debian/control: Use ${misc:Pre-Depends} instead of (Pre-) depending on
+    multiarch-support explicitly
+
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 13 May 2017 13:55:08 +0200
+
+tpm-tools (1.3.9-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Upgrade to 1.3.9
+    - Builds with openssl 1.1.0 (Closes: #828577).
+    - Align code properly so gcc-6 does not complain (Closes: #811576).
+    - update symbol file.
+    - drop 02-cflags-errors-unused.patch, -Werror is gone.
+    - update 03-fix-bool-error-parseStringWithValues.patch, different fix
+      upstream, does not look right.
+
+ -- Sebastian Andrzej Siewior <sebastian@breakpoint.cc>  Sun, 05 Feb 2017 23:24:09 +0100
+
+tpm-tools (1.3.8-2) unstable; urgency=medium
+
+  * Add patch 03 to fix FTBFS with gcc-5 (Closes: #778147)
+  * Merge patch 04 to fix FTBFS with clang (Closes: #753063)
+    Thanks to Alexander <sanek23994@gmail.com> for the patch.
+  * Bump Standards Version to 3.9.6
+
+ -- Pierre Chifflier <pollux@debian.org>  Sun, 28 Jun 2015 12:15:17 +0200
+
+tpm-tools (1.3.8-1) unstable; urgency=low
+
+  * Imported Upstream version 1.3.8
+  * Add watch file
+  * Drop 03-fix-build.patch, not necessary anymore. Build depend on 0.3.10
+  * Bump Standards Version to 3.9.4
+  * Switch to DH version 9
+    - Enable multiarch support
+    - Enable hardening flags
+  * Add symbols file for libtpm-unseal1
+
+ -- Pierre Chifflier <pollux@debian.org>  Tue, 19 Feb 2013 16:42:52 -0800
+
+tpm-tools (1.3.7-1) unstable; urgency=low
+
+  * New maintainer (Closes: #649599)
+  * Imported Upstream version 1.3.7
+  * Bump Standards Version to 3.9.2
+  * Switch to dpkg-source 3.0 (quilt) format
+  * Use debhelper 8
+  * Add build-dependency on dh-autoreconf
+  * Rename binary package libtpm-unseal0 to libtpm-unseal1
+  * Do not ship .la files
+  * Fix build with -Werror (since there are warnings)
+  * Fix build: add missing file tpm_nvcommon.h (taken from upstream git), and
+    suppress call to non-existing function Trspi_UnloadBlob_NV_DATA_PUBLIC.
+
+ -- Pierre Chifflier <pollux@debian.org>  Tue, 22 Nov 2011 15:50:16 +0000
+
+tpm-tools (1.3.3-2) unstable; urgency=low
+
+  * Removing vcs fields.
+  * Orphaning package.
+
+ -- Daniel Baumann <danieL@debian.org>  Thu, 27 Aug 2009 16:23:33 +0200
+
+tpm-tools (1.3.3-1) unstable; urgency=low
+
+  * Merging upstream version 1.3.3.
+  * Upstream dropped static version of the privat libraries, hence
+    updating the debhelper install file.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 16 Aug 2009 19:03:49 +0200
+
+tpm-tools (1.3.2-1) UNRELEASED; urgency=low
+
+  * Merging upstream version 1.3.2.
+  * Updating to standards version 3.8.3.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 16 Aug 2009 18:50:31 +0200
+
+tpm-tools (1.3.1-7) unstable; urgency=low
+
+  * Updating maintainer field.
+  * Updating maintainer fields.
+  * Sorting depends fields.
+  * Tidy debhelper install file.
+  * Adding automake to build-depends.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 14 Aug 2009 12:15:16 +0200
+
+tpm-tools (1.3.1-6) unstable; urgency=low
+
+  * Replacing obsolete dh_clean -k with dh_prep.
+  * Updating section of the debug package.
+  * Using correct rfc-2822 date formats in changelog.
+  * Updating package to standards version 3.8.2.
+  * Adding misc depends.
+  * Updating year in copyright.
+  * Using quilt rather than dpatch.
+  * Minimizing rules file.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 02 Aug 2009 13:35:20 +0200
+
+tpm-tools (1.3.1-5) unstable; urgency=low
+
+  * Upgrading package to standards 3.8.0.
+  * Upgrading package to debhelper 7.
+  * Updating vcs fields in control file.
+  * Using patch-stamp rather than patch in rules file.
+  * Updating cross handling in rules file.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 20 Sep 2008 22:02:00 +0200
+
+tpm-tools (1.3.1-4) unstable; urgency=medium
+
+  * Opening libopencryptoki correctly with soname major (Closes: #493999).
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 06 Aug 2008 16:51:00 +0200
+
+tpm-tools (1.3.1-3) unstable; urgency=low
+
+  * Reordering rules file.
+  * Removing useless README from tpm-tools docs file.
+  * Rewriting copyright file in machine-interpretable format.
+  * Adding vcs fields in control file.
+  * Updating package to debhelper 6.
+  * Reverting config.guess and config.sub to upstream.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 16 Apr 2008 21:16:00 +0200
+
+tpm-tools (1.3.1-2) unstable; urgency=low
+
+  * Fixed typo in depends (Closes: #457422).
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 22 Dec 2007 10:53:00 +0100
+
+tpm-tools (1.3.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #409591).
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 05 Dec 2007 23:13:00 +0100

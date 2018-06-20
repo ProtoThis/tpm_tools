@@ -1,0 +1,65 @@
+Source: tpm-tools
+Section: admin
+Priority: optional
+Maintainer: Pierre Chifflier <pollux@debian.org>
+Build-Depends:
+ debhelper (>= 9), autotools-dev, automake, libopencryptoki-dev,
+ libtspi-dev (>= 0.3.10),
+ quilt, dh-autoreconf, autopoint
+Standards-Version: 3.9.6
+Homepage: http://trousers.sourceforge.net/
+
+Package: tpm-tools
+Section: admin
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, opencryptoki, trousers
+Description: Management tools for the TPM hardware (tools)
+ tpm-tools is a group of tools to manage and utilize the Trusted Computing
+ Group's TPM hardware. TPM hardware can create, store and use RSA keys securely
+ (without ever being exposed in memory), verify a platform's software state
+ using cryptographic hashes and more.
+ .
+ This package contains tools to allow the platform administrator the ability
+ to manage and diagnose the platform's TPM. Additionally, the package contains
+ commands to utilize some of the capabilities available in the TPM PKCS#11
+ interface implemented in the openCryptoki project.
+
+Package: tpm-tools-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends:
+ ${misc:Depends}, tpm-tools (= ${binary:Version}),
+ libtpm-unseal1 (= ${binary:Version}), libtpm-unseal-dev (= ${binary:Version})
+Description: Management tools for the TPM hardware (debug)
+ tpm-tools is a group of tools to manage and utilize the Trusted Computing
+ Group's TPM hardware. TPM hardware can create, store and use RSA keys securely
+ (without ever being exposed in memory), verify a platform's software state
+ using cryptographic hashes and more.
+ .
+ This package contains the debugging symbols.
+
+Package: libtpm-unseal1
+Section: libs
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Management tools for the TPM hardware (library)
+ tpm-tools is a group of tools to manage and utilize the Trusted Computing
+ Group's TPM hardware. TPM hardware can create, store and use RSA keys
+ securely (without ever being exposed in memory), verify a platform's
+ software state using cryptographic hashes and more.
+ .
+ This package contains the library.
+
+Package: libtpm-unseal-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, libtpm-unseal1 (= ${binary:Version})
+Description: Management tools for the TPM hardware (development)
+ tpm-tools is a group of tools to manage and utilize the Trusted Computing
+ Group's TPM hardware. TPM hardware can create, store and use RSA keys
+ securely (without ever being exposed in memory), verify a platform's
+ software state using cryptographic hashes and more.
+ .
+ This package contains the development files.
